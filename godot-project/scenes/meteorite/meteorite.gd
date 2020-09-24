@@ -12,5 +12,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	move_and_collide(velocity * speed * delta)
 	rotate(random_rotation)
+	var collision = move_and_collide(velocity * speed * delta)
+	if collision:
+		queue_free()
