@@ -15,3 +15,7 @@ func _on_respawn_timer_timeout():
 
 func enable():
 	$respawn_timer.start()
+
+
+func disable():
+	$respawn_timer.stop()

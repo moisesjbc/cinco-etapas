@@ -16,3 +16,6 @@ func _on_meteors_timer_timeout():
 
 func enable():
 	$meteors_timer.start()
+	
+func disable():
+	$meteors_timer.stop()

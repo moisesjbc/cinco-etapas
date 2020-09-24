@@ -15,6 +15,7 @@ var n_sticked_friends: int = 0
 var bullet_scene = preload("res://scenes/bullet/bullet.tscn")
 var life = 100
 var sacrifice_enabled: bool = false
+var input_enabled: bool = true
 
 func _ready():
 	base_speed = initial_speed
@@ -23,31 +24,35 @@ func _ready():
 func _physics_process(delta):
 	var velocity: Vector2 = Vector2(0.0, 0.0)
 	
-	# Horizontal movement
-	if Input.is_action_pressed("ui_left"):
-		velocity.x = -1
-	elif Input.is_action_pressed("ui_right"):
-		velocity.x = +1
-	
-	# Vertical movement
-	if Input.is_action_pressed("ui_up"):
-		velocity.y = -1
-	elif Input.is_action_pressed("ui_down"):
-		velocity.y = +1
+	if input_enabled:
+		# Horizontal movement
+		if Input.is_action_pressed("ui_left"):
+			velocity.x = -1
+		elif Input.is_action_pressed("ui_right"):
+			velocity.x = +1
 		
-	# Sacrifice
-	if sacrifice_enabled and Input.is_action_just_pressed("ui_sacrifice"):
-		sacrifice()
+		# Vertical movement
+		if Input.is_action_pressed("ui_up"):
+			velocity.y = -1
+		elif Input.is_action_pressed("ui_down"):
+			velocity.y = +1
+			
+		# Sacrifice
+		if sacrifice_enabled and Input.is_action_just_pressed("ui_sacrifice"):
+			sacrifice()
+			
+		# Shoot
+		if Input.is_action_just_pressed("ui_shoot"):
+			shoot()
 		
-	# Shoot
-	if Input.is_action_just_pressed("ui_shoot"):
-		shoot()
+		speed = max(base_speed + travelling_speed_delta() * 0.1 - n_sticked_friends * stick_penalty_by_friend, min_speed)
+		traveling_speed = max(base_traveling_speed - n_sticked_friends * stick_penalty_by_friend, min_speed)
+		move_and_collide(velocity * speed * delta)
+		
+		$bullet_respawn.look_at(get_global_mouse_position())
 
-	speed = max(base_speed + travelling_speed_delta() * 0.1 - n_sticked_friends * stick_penalty_by_friend, min_speed)
-	traveling_speed = max(base_traveling_speed - n_sticked_friends * stick_penalty_by_friend, min_speed)
-	move_and_collide(velocity * speed * delta)
-	
-	$bullet_respawn.look_at(get_global_mouse_position())
+func disable_input():
+	input_enabled = false
 
 func stick_friend(friend):
 	add_child(friend)
