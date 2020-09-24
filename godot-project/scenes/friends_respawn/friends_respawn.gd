@@ -9,5 +9,5 @@ func _on_respawn_timer_timeout():
 	
 	# Respawn the friend
 	var friend = friend_scene.instance()
-	friend.position = $path/path_follow.position
-	add_child(friend)
+	friend.global_position = $path/path_follow.global_position
+	get_tree().root.add_child(friend)

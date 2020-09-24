@@ -1,12 +1,16 @@
-extends RigidBody2D
+extends KinematicBody2D
+
+var velocity: Vector2
+var speed: int = 100
+var random_rotation: float = randf() * 0.2 - 0.1
 
 func _ready():
 	# Set a random linear velocity
-	var direction_vector: Vector2 = -position.normalized()
+	velocity = (get_node("/root/main_scene/player").global_position - global_position).normalized()
 	var intensity: float = 1.5
-	direction_vector.rotated(randf() * 0.3)
-	add_force(Vector2(0.0, 0.0), direction_vector * intensity)
-	
-	# Set a random linear velocity
-	angular_velocity = randf() - 0.5
-	
+	velocity.rotated(randf() * 0.3)
+
+
+func _physics_process(delta):
+	move_and_collide(velocity * speed * delta)
+	rotate(random_rotation)
