@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1111.33, 454.39, 0, 0, 0, 0, 1082.15, -69.7998, 0, 0, 0, 0, 450.204, -67.5549 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1048.48, 751.842, 0, 0, 0, 0, 1047.35, 22.242 )
 }
 
 [node name="respawn_manager" type="Node2D"]
@@ -14,8 +14,8 @@ script = ExtResource( 1 )
 curve = SubResource( 1 )
 
 [node name="path_follow" type="PathFollow2D" parent="path"]
-position = Vector2( 1111.33, 454.39 )
-rotation = -1.62646
+position = Vector2( 1048.48, 751.842 )
+rotation = -1.57239
 
 [node name="meteors_timer" type="Timer" parent="."]
 wait_time = 1.5

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-export var speed: int = 500
+export var base_speed: int = 500
+var speed: int
 export var damage_per_meteorite = 10
 export var min_speed: int = 30
 export var stick_penalty_by_friend: int = 100
@@ -30,8 +31,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_shoot"):
 		shoot()
 
-	var final_speed = max(speed - n_sticked_friends * stick_penalty_by_friend, min_speed)
-	move_and_collide(velocity * final_speed * delta)
+	speed = max(base_speed - n_sticked_friends * stick_penalty_by_friend, min_speed)
+	move_and_collide(velocity * speed * delta)
 	
 	$bullet_respawn.look_at(get_global_mouse_position())
 

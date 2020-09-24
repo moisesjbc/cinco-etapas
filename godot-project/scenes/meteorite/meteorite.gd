@@ -5,10 +5,7 @@ var speed: int = 100
 var random_rotation: float = randf() * 0.2 - 0.1
 
 func _ready():
-	# Set a random linear velocity
-	velocity = (get_node("/root/main_scene/player").global_position - global_position).normalized()
-	var intensity: float = 1.5
-	velocity.rotated(randf() * 0.3)
+	velocity = Vector2(-1.0, 0.0).normalized()
 
 
 func _physics_process(delta):
