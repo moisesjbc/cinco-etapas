@@ -14,15 +14,16 @@ func _ready():
 func _physics_process(delta):
 	var distance_to_player: Vector2 = player.global_position - global_position
 	
-	if not is_sticked:
-		if distance_to_player.length() > STICKY_DISTANCE:
-			move_and_collide(distance_to_player.normalized() * speed * delta)
-		else:
-			is_sticked = true
-			
-			# "Stick" friend to player by removing it from its current parent
-			# and adding it as a child to player.
-			var position = global_position
-			get_parent().remove_child(self)
-			player.add_child(self)
-			global_position = position
+	if distance_to_player.length() > STICKY_DISTANCE:
+		move_and_collide(distance_to_player.normalized() * speed * delta)
+	else:
+		is_sticked = true
+		
+		# "Stick" friend to player by removing it from its current parent
+		# and adding it as a child to player.
+		var position = global_position
+		get_parent().remove_child(self)
+		player.add_child(self)
+		player.stick_friend(self)
+		global_position = position
+		set_physics_process(false)
