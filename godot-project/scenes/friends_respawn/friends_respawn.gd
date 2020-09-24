@@ -11,3 +11,7 @@ func _on_respawn_timer_timeout():
 	var friend = friend_scene.instance()
 	friend.global_position = $path/path_follow.global_position
 	get_tree().root.add_child(friend)
+
+
+func enable():
+	$respawn_timer.start()

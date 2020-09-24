@@ -7,7 +7,7 @@ export var min_speed: int = 30
 export var stick_penalty_by_friend: int = 100
 var n_sticked_friends: int = 0
 var bullet_scene = preload("res://scenes/bullet/bullet.tscn")
-var life = 50
+var life = 100
 
 func _ready():
 	update_life_label()
@@ -58,3 +58,13 @@ func meteorite_hit():
 	if life < 0:
 		life = 0
 	update_life_label()
+
+func loose_loved_one():
+	position = $loved_one_position.global_position
+	var loved_one_position = $loved_one_position
+	var loved_one = $loved_one_position/loved_one
+	remove_child(loved_one_position)
+	get_node("/root/main_scene").add_child(loved_one_position)
+	loved_one_position.global_position = position 
+	loved_one.die()
+

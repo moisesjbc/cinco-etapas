@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/story_gui/story_gui.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="story_gui" type="Control"]
+margin_left = -4.0
+margin_top = 3.0
+margin_right = 1022.0
+margin_bottom = 768.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 7.82837
+margin_top = 707.799
+margin_right = 1037.83
+margin_bottom = 766.799
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "FFFF"
+text = "FFFF"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

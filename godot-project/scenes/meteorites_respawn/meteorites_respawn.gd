@@ -12,3 +12,7 @@ func _on_meteors_timer_timeout():
 	var meteorite = meteorite_scene.instance()
 	meteorite.global_position = $path/path_follow.global_position
 	get_tree().root.add_child(meteorite)
+
+
+func enable():
+	$meteors_timer.start()
