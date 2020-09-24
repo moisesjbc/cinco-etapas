@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/story_gui/story_gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://scenes/friends_respawn/friends_respawn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/death/death.tscn" type="PackedScene" id=6]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/main_scene/states/state_0_loss.gd" type="Script" id=8]
+[ext_resource path="res://scenes/main_scene/states/state_1_denial.gd" type="Script" id=9]
+[ext_resource path="res://scenes/main_scene/states/state_2_anger.gd" type="Script" id=10]
+[ext_resource path="res://scenes/main_scene/states/state_3_bargaining.gd" type="Script" id=11]
+[ext_resource path="res://scenes/main_scene/states/state_4_depression.gd" type="Script" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 7 )
@@ -47,4 +52,19 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="state_0_loss" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="state_1_denial" type="Node2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="state_2_anger" type="Node2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="state_3_bargaining" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="state_4_depression" type="Node2D" parent="."]
+script = ExtResource( 12 )
 [connection signal="timeout" from="stage_timer" to="." method="_on_stage_timer_timeout"]
