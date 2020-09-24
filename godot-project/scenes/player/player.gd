@@ -1,15 +1,19 @@
 extends KinematicBody2D
 
-export var base_speed: int = 500
+export var initial_speed: int = 500
+var base_speed: int
 var speed: int
 export var damage_per_meteorite = 10
+export var damage_per_sacrifice = 10
 export var min_speed: int = 30
 export var stick_penalty_by_friend: int = 100
 var n_sticked_friends: int = 0
 var bullet_scene = preload("res://scenes/bullet/bullet.tscn")
 var life = 100
+var sacrifice_enabled: bool = false
 
 func _ready():
+	base_speed = initial_speed
 	update_life_label()
 
 func _physics_process(delta):
@@ -26,6 +30,10 @@ func _physics_process(delta):
 		velocity.y = -1
 	elif Input.is_action_pressed("ui_down"):
 		velocity.y = +1
+		
+	# Sacrifice
+	if sacrifice_enabled and Input.is_action_just_pressed("ui_sacrifice"):
+		sacrifice()
 		
 	# Shoot
 	if Input.is_action_just_pressed("ui_shoot"):
@@ -54,7 +62,10 @@ func update_life_label():
 	$life_label.text = str(life) + " %"
 
 func meteorite_hit():
-	life -= damage_per_meteorite
+	take_damage(damage_per_meteorite)
+	
+func take_damage(damage):
+	life -= damage
 	if life < 0:
 		life = 0
 	update_life_label()
@@ -67,4 +78,10 @@ func loose_loved_one():
 	get_node("/root/main_scene").add_child(loved_one_position)
 	loved_one_position.global_position = position 
 	loved_one.die()
+	
+func sacrifice():
+	take_damage(damage_per_sacrifice)
+	base_speed += 100
 
+func enable_sacrifice():
+	sacrifice_enabled = true
