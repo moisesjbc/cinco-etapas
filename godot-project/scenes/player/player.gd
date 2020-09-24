@@ -3,10 +3,14 @@ extends KinematicBody2D
 export var initial_speed: int = 500
 var base_speed: int
 var speed: int
+export var initial_traveling_speed: int = 200
+export var base_traveling_speed: int = initial_traveling_speed
+var traveling_speed: int = 200
 export var damage_per_meteorite = 10
 export var damage_per_sacrifice = 10
 export var min_speed: int = 30
 export var stick_penalty_by_friend: int = 100
+export var traveling_speed_increase_per_sacrifice: int = 300
 var n_sticked_friends: int = 0
 var bullet_scene = preload("res://scenes/bullet/bullet.tscn")
 var life = 100
@@ -39,7 +43,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_shoot"):
 		shoot()
 
-	speed = max(base_speed - n_sticked_friends * stick_penalty_by_friend, min_speed)
+	speed = max(base_speed + travelling_speed_delta() * 0.1 - n_sticked_friends * stick_penalty_by_friend, min_speed)
+	traveling_speed = max(base_traveling_speed - n_sticked_friends * stick_penalty_by_friend, min_speed)
 	move_and_collide(velocity * speed * delta)
 	
 	$bullet_respawn.look_at(get_global_mouse_position())
@@ -71,17 +76,19 @@ func take_damage(damage):
 	update_life_label()
 
 func loose_loved_one():
-	position = $loved_one_position.global_position
-	var loved_one_position = $loved_one_position
-	var loved_one = $loved_one_position/loved_one
-	remove_child(loved_one_position)
-	get_node("/root/main_scene").add_child(loved_one_position)
-	loved_one_position.global_position = position 
+	position = $loved_one.global_position
+	var loved_one = $loved_one
+	remove_child(loved_one)
+	get_node("/root/main_scene").add_child(loved_one)
+	loved_one.global_position = position 
 	loved_one.die()
 	
 func sacrifice():
 	take_damage(damage_per_sacrifice)
-	base_speed += 100
+	base_traveling_speed += traveling_speed_increase_per_sacrifice
 
 func enable_sacrifice():
 	sacrifice_enabled = true
+
+func travelling_speed_delta():
+	return traveling_speed - initial_traveling_speed

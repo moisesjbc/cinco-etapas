@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export var traveling_speed: int = 1500
+
 func _ready():
 	set_physics_process(false)
 

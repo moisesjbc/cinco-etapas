@@ -39,7 +39,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="loved_one_position" type="Position2D" parent="."]
-
-[node name="loved_one" parent="loved_one_position" instance=ExtResource( 3 )]
-position = Vector2( 0, -94.8219 )
+[node name="loved_one" parent="." instance=ExtResource( 3 )]

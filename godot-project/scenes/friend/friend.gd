@@ -5,14 +5,16 @@ export var MAX_SPEED = 30
 export var STICKY_DISTANCE = 100
 onready var player = get_node("/root/main_scene/player")
 var is_sticked: bool = false
+var speed: int
+
+func _ready():
+	speed = player.speed + randi() % (MAX_SPEED - MIN_SPEED) + MIN_SPEED
 
 func _physics_process(delta):
 	var distance_to_player: Vector2 = player.global_position - global_position
 	
-	var speed = player.speed + randi() % (MAX_SPEED - MIN_SPEED) + MIN_SPEED
-	
 	if distance_to_player.length() > STICKY_DISTANCE:
-		move_and_collide(distance_to_player.normalized() * speed * delta)
+		move_and_collide(distance_to_player.normalized() * (speed + player.travelling_speed_delta() * 0.2) * delta)
 	else:
 		is_sticked = true
 		

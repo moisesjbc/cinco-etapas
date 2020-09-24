@@ -28,11 +28,11 @@ func _on_stage_timer_timeout():
 		set_physics_process(true)
 		$story_gui.set_text("No dejaré que se lo lleven...", null, null)
 		$meteorites_respawn.enable()
-		$stage_timer.start(15)
+		$stage_timer.start(2)
 	elif current_stage == 1:
 		$story_gui.set_text("¡Aunque tenga que acabar con todos...!", null, null)
 		$friends_respawn.enable()
-		$stage_timer.start(10)
+		$stage_timer.start(2)
 	elif current_stage == 2:
 		$story_gui.set_text("No llego...", null, funcref(self, "stage_2"))
 		set_physics_process(true)
@@ -41,5 +41,7 @@ func _on_stage_timer_timeout():
 
 func _physics_process(delta):
 	if current_stage >= 0:
-		distance_to_loved_one += 500 * delta
+		print("loved one speed: " + str(get_node("/root/main_scene/loved_one").traveling_speed))
+		print("player: " + str($player.traveling_speed))
+		distance_to_loved_one += (get_node("/root/main_scene/loved_one").traveling_speed - $player.traveling_speed) * delta
 		$distance_label.text = str(int(distance_to_loved_one)) + " ->"
