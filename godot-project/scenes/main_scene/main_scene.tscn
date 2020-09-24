@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/friends_respawn/friends_respawn.tscn" type="PackedScene" id=5]
 
 [node name="main_scene" type="Node2D"]
+position = Vector2( 9.39673, -1.33484 )
 
 [node name="dummy_ref_sprite" type="Sprite" parent="."]
 position = Vector2( 833, 315 )

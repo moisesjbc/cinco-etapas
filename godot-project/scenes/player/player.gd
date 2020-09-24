@@ -1,11 +1,15 @@
 extends KinematicBody2D
 
 export var speed: int = 500
+export var damage_per_meteorite = 10
 export var min_speed: int = 30
 export var stick_penalty_by_friend: int = 100
 var n_sticked_friends: int = 0
 var bullet_scene = preload("res://scenes/bullet/bullet.tscn")
+var life = 50
 
+func _ready():
+	update_life_label()
 
 func _physics_process(delta):
 	var velocity: Vector2 = Vector2(0.0, 0.0)
@@ -38,10 +42,18 @@ func stick_friend(friend):
 func unstick_friend():
 	n_sticked_friends -= 1
 
-
 func shoot():
 	var bullet = bullet_scene.instance()
 	
 	get_node("/root/main_scene").add_child(bullet)
 	bullet.global_position = $bullet_respawn/sprite.global_position
 	bullet.global_rotation = $bullet_respawn/sprite.global_rotation
+
+func update_life_label():
+	$life_label.text = str(life) + " %"
+
+func meteorite_hit():
+	life -= damage_per_meteorite
+	if life < 0:
+		life = 0
+	update_life_label()

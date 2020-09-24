@@ -19,6 +19,10 @@ config/name="godot-project"
 run/main_scene="res://scenes/main_scene/main_scene.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/height=768
+
 [input]
 
 ui_left={
