@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/meteorites_respawn/meteorites_respawn.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/friend/friend.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/friends_respawn/friends_respawn.tscn" type="PackedScene" id=5]
 
 [node name="main_scene" type="Node2D"]
 
@@ -20,6 +21,9 @@ current = true
 
 [node name="respawn_manager" parent="player/camera" instance=ExtResource( 3 )]
 position = Vector2( -516.332, -285.105 )
+
+[node name="friends_respawn" parent="player/camera" instance=ExtResource( 5 )]
+position = Vector2( -480.246, -303.347 )
 
 [node name="friend" parent="." instance=ExtResource( 4 )]
 position = Vector2( 675.722, 111.124 )
