@@ -14,7 +14,7 @@ func _physics_process(delta):
 	var distance_to_player: Vector2 = player.global_position - global_position
 	
 	if distance_to_player.length() > STICKY_DISTANCE:
-		move_and_collide(distance_to_player.normalized() * (speed + player.travelling_speed_delta() * 0.2) * delta)
+		move_and_collide(distance_to_player.normalized() * (speed + player.travelling_speed_delta() * 0.1) * delta)
 	else:
 		is_sticked = true
 		
