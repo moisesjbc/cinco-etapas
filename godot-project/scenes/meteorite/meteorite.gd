@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var velocity: Vector2 = Vector2(-1.0, 0.0)
-var speed: int = 100
+var speed: int = 500
 var random_rotation: float = randf() * 0.2 - 0.1
 export var destroy_on_collision: bool = true
 

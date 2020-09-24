@@ -18,5 +18,4 @@ position = Vector2( 1048.48, 751.842 )
 rotation = -1.57239
 
 [node name="meteors_timer" type="Timer" parent="."]
-wait_time = 1.5
 [connection signal="timeout" from="meteors_timer" to="." method="_on_meteors_timer_timeout"]
