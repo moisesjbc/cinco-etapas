@@ -12,11 +12,8 @@ func _ready():
 		velocity = Vector2(-1.0, 0.0)
 
 func _physics_process(delta):
-	#print("process ", is_colliding())
-	var relative_speed = player.base_speed - player.speed
-	
-	if relative_speed > 0:
-		var collision = translate(velocity * max(relative_speed, 0) * delta)
+	if player.n_sticked_friends > 0:
+		var collision = translate(velocity * player.n_sticked_friends * 30 * delta)
 
 
 func _on_death_body_entered(body):
