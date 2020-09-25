@@ -1,17 +1,25 @@
-extends KinematicBody2D
+extends Area2D
 
 onready var player = get_node("/root/main_scene/player")
 
 export var to_right: bool = true
 var velocity: Vector2
 
-func ready():
+func _ready():
 	if to_right:
 		velocity = Vector2(1.0, 0.0)
 	else:
 		velocity = Vector2(-1.0, 0.0)
 
 func _physics_process(delta):
-	var collision = move_and_collide(velocity * max(player.initial_traveling_speed - player.traveling_speed, 0) * delta)
-	if collision and collision.collider.name == "player":
-		collision.collider.die()
+	#print("process ", is_colliding())
+	var relative_speed = player.base_speed - player.speed
+	
+	if relative_speed > 0:
+		var collision = translate(velocity * max(relative_speed, 0) * delta)
+
+
+func _on_death_body_entered(body):
+	print("body", body.name)
+	if body.name == "player":
+		body.die()

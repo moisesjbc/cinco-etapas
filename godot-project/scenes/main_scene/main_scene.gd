@@ -10,7 +10,7 @@ onready var current_state
 func _ready():
 	get_tree().paused = false
 	change_state("state_0_loss")
-		
+
 func change_state(new_state):
 	current_state = get_node(new_state)
 	current_state.state_machine = self
@@ -21,22 +21,17 @@ func _on_stage_timer_timeout():
 	if current_state and current_state.has_method("timeout"):
 		current_state.timeout()
 
-var i=0
-
 func _physics_process(delta):
-	i += 1
-	print("process " + str(i))
 	if current_state and current_state.has_method("process"):
 		current_state.process(delta)
 
 
 func move_to(node, final_position, delta, flag, speed = 300):
 	if node.global_position.distance_to(final_position) > 30:
-		node.move_and_collide((final_position - node.global_position).normalized() * speed * delta)
+		node.translate((final_position - node.global_position).normalized() * speed * delta)
 		return false
 	else:
 		return flag and true
-
 
 func set_text(text, pre_callback, post_callback):
 	$story_gui.set_text(text, pre_callback, post_callback)
@@ -46,7 +41,6 @@ func set_texts(texts, post_callback=null):
 	
 func set_timeout(time):
 	$stage_timer.start(time)
-
 
 func _on_player_player_died():
 	get_tree().paused = true

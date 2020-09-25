@@ -29,6 +29,6 @@ func process(delta):
 		state_machine.loved_one.move_and_collide((loved_one_final_position - state_machine.loved_one.global_position).normalized() * 300 * delta)
 	if death.global_position.distance_to(death_final_position) > 30:
 		all_in_position = false
-		death.move_and_collide((death_final_position - death.global_position).normalized() * 300 * delta)
+		death.translate((death_final_position - death.global_position).normalized() * 300 * delta)
 	if all_in_position:
 		state_machine.change_state("state_4_depression_act_1")
