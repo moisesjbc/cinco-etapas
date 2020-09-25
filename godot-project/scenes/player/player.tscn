@@ -40,3 +40,6 @@ __meta__ = {
 }
 
 [node name="loved_one" parent="." instance=ExtResource( 3 )]
+
+[node name="healing_timer" type="Timer" parent="."]
+[connection signal="timeout" from="healing_timer" to="." method="_on_healing_timer_timeout"]

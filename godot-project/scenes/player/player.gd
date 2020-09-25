@@ -80,13 +80,21 @@ func meteorite_hit():
 	take_damage(damage_per_meteorite)
 	
 func take_damage(damage):
+	if life == 50:
+		$healing_timer.start(1)
 	life -= damage
 	if life <= 0:
 		life = 0
 		die()
-		
+
 	update_life_label()
 	
+func _on_healing_timer_timeout():
+	life += 1
+	update_life_label()
+	if life == 50:
+		$healing_timer.stop()
+
 func die():
 	emit_signal("player_died")
 
@@ -109,3 +117,6 @@ func enable_sacrifice():
 
 func travelling_speed_delta():
 	return traveling_speed - initial_traveling_speed
+
+
+
