@@ -8,6 +8,7 @@ var loved_one
 onready var current_state
 
 func _ready():
+	clean_npcs()
 	get_tree().paused = false
 	change_state("state_0_loss")
 
@@ -45,3 +46,9 @@ func set_timeout(time):
 func _on_player_player_died():
 	get_tree().paused = true
 	$game_over.set_visible(true)
+	
+func clean_npcs():
+	for meteorite in get_tree().get_nodes_in_group("meteorites"):
+		meteorite.queue_free()
+	for friend in get_tree().get_nodes_in_group("friends"):
+		friend.queue_free()
