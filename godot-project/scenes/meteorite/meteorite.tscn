@@ -8,6 +8,7 @@
 extents = Vector2( 32.1087, 31.8406 )
 
 [node name="meteorite" type="KinematicBody2D" groups=[
+"clear_on_reset",
 "meteorites",
 ]]
 pause_mode = 1

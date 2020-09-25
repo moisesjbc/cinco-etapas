@@ -8,6 +8,7 @@
 extents = Vector2( 32.4694, 31.9786 )
 
 [node name="friend" type="KinematicBody2D" groups=[
+"clear_on_reset",
 "friends",
 ]]
 position = Vector2( -0.630646, 0.630661 )

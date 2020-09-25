@@ -13,6 +13,8 @@ func _ready():
 	change_state("tutorial_act_0")
 
 func change_state(new_state):
+	if current_state and current_state.has_method("stop"):
+		current_state.start()
 	current_state = get_node(new_state)
 	current_state.state_machine = self
 	if current_state.has_method("start"):
@@ -51,10 +53,8 @@ func _on_player_player_died():
 	$game_over.set_visible(true)
 	
 func clean_npcs():
-	for meteorite in get_tree().get_nodes_in_group("meteorites"):
-		meteorite.queue_free()
-	for friend in get_tree().get_nodes_in_group("friends"):
-		friend.queue_free()
+	for clear_on_reset_asset in get_tree().get_nodes_in_group("clear_on_reset"):
+		clear_on_reset_asset.queue_free()
 
 func get_instruction_text(text, flag):
 	var color = "#FF0000"

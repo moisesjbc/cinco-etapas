@@ -26,6 +26,7 @@ func start():
 	death_right.global_position = Vector2(1300.0, 368)
 	death_right.name = "death_right"
 	death_right_final_position = Vector2(1000.0, death_right.global_position.y)
+	death_right.add_to_group("clear_on_reset")
 	get_tree().root.add_child(death_right)
 	death_right.set_physics_process(false)
 	
