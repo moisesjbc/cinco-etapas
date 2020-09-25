@@ -41,4 +41,6 @@ func process(delta):
 	var all_in_position = state_machine.move_to(death_left, death_left_final_position, delta, true, 40)
 	all_in_position = state_machine.move_to(death_right, death_right_final_position, delta, all_in_position, 40)
 	if all_in_position:
-		print("Wololooo")
+		death_left.queue_free()
+		death_right.queue_free()
+		state_machine.change_state("state_5_acceptance_act_0")

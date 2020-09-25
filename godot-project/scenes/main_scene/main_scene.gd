@@ -35,5 +35,8 @@ func move_to(node, final_position, delta, flag, speed = 300):
 func set_text(text, pre_callback, post_callback):
 	$story_gui.set_text(text, pre_callback, post_callback)
 	
+func set_texts(texts, post_callback=null):
+	$story_gui.set_texts(texts, post_callback)
+	
 func set_timeout(time):
 	$stage_timer.start(time)

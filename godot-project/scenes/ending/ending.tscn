@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/story_gui/story_gui.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/ending/ending.gd" type="Script" id=2]
+
+[node name="ending" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="background" type="ColorRect" parent="."]
+margin_left = -18.7134
+margin_top = -27.4756
+margin_right = 1049.29
+margin_bottom = 793.524
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="story_gui" parent="." instance=ExtResource( 1 )]
+margin_left = -22.7134
+margin_top = -24.4756
+margin_right = 1003.29
+margin_bottom = 740.524
