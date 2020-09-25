@@ -26,7 +26,6 @@ func _physics_process(delta):
 	if current_state and current_state.has_method("process"):
 		current_state.process(delta)
 
-
 func move_to(node, final_position, delta, flag, speed = 300):
 	if node.global_position.distance_to(final_position) > 30:
 		node.translate((final_position - node.global_position).normalized() * speed * delta)

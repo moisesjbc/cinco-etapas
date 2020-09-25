@@ -18,4 +18,6 @@ func _physics_process(delta):
 		if destroy_on_collision and collision:
 			if collision.collider.name == "player":
 				collision.collider.meteorite_hit()
-			queue_free()
+				queue_free()
+			elif collision.collider.is_in_group("friends"):
+				queue_free()
