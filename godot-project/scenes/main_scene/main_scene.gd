@@ -10,7 +10,7 @@ onready var current_state
 func _ready():
 	clean_npcs()
 	get_tree().paused = false
-	change_state("state_0_loss")
+	change_state("tutorial_act_0")
 
 func change_state(new_state):
 	current_state = get_node(new_state)
@@ -25,6 +25,10 @@ func _on_stage_timer_timeout():
 func _physics_process(delta):
 	if current_state and current_state.has_method("process"):
 		current_state.process(delta)
+		
+func _input(event):
+	if current_state and current_state.has_method("input"):
+		current_state.input(event)
 
 func move_to(node, final_position, delta, flag, speed = 300):
 	if node.global_position.distance_to(final_position) > 30:
@@ -33,8 +37,8 @@ func move_to(node, final_position, delta, flag, speed = 300):
 	else:
 		return flag and true
 
-func set_text(text, pre_callback, post_callback):
-	$story_gui.set_text(text, pre_callback, post_callback)
+func set_text(text, pre_callback, post_callback, delay):
+	$story_gui.set_text(text, pre_callback, post_callback, delay)
 	
 func set_texts(texts, post_callback=null):
 	$story_gui.set_texts(texts, post_callback)
@@ -51,3 +55,9 @@ func clean_npcs():
 		meteorite.queue_free()
 	for friend in get_tree().get_nodes_in_group("friends"):
 		friend.queue_free()
+
+func get_instruction_text(text, flag):
+	var color = "#FF0000"
+	if flag:
+		color = "#00FF00"
+	return "[color=" + color + "]" + text + "[/color]"

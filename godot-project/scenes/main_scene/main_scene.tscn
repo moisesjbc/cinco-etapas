@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/story_gui/story_gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
@@ -12,10 +12,14 @@
 [ext_resource path="res://scenes/main_scene/states/state_2_anger.gd" type="Script" id=10]
 [ext_resource path="res://scenes/main_scene/states/state_3_bargaining.gd" type="Script" id=11]
 [ext_resource path="res://scenes/main_scene/states/state_4_depression.gd" type="Script" id=12]
+[ext_resource path="res://scenes/main_scene/tutorial_act_0.gd" type="Script" id=13]
 [ext_resource path="res://scenes/main_scene/states/state_4_depression_act_1.gd" type="Script" id=14]
 [ext_resource path="res://scenes/main_scene/states/state_4_depression_act_2.gd" type="Script" id=15]
 [ext_resource path="res://scenes/main_scene/states/state_5_acceptance_act_0.gd" type="Script" id=16]
 [ext_resource path="res://menus/game_over/game_over.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/main_scene/states/tutorial_act_1.gd" type="Script" id=18]
+[ext_resource path="res://scenes/main_scene/states/tutorial_act_2.gd" type="Script" id=19]
+[ext_resource path="res://scenes/main_scene/states/tutorial_act_3.gd" type="Script" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 7 )
@@ -38,9 +42,9 @@ position = Vector2( 364.755, 292 )
 position = Vector2( -3.4455, 387.953 )
 
 [node name="story_gui" parent="." instance=ExtResource( 1 )]
-margin_left = -4.41907
+margin_left = -3.22986
 margin_top = 3.8409
-margin_right = 1021.58
+margin_right = 1022.77
 margin_bottom = 768.841
 
 [node name="stage_timer" type="Timer" parent="."]
@@ -57,6 +61,18 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="tutorial_act_0" type="Node2D" parent="."]
+script = ExtResource( 13 )
+
+[node name="tutorial_act_1" type="Node2D" parent="."]
+script = ExtResource( 18 )
+
+[node name="tutorial_act_2" type="Node2D" parent="."]
+script = ExtResource( 19 )
+
+[node name="tutorial_act_3" type="Node2D" parent="."]
+script = ExtResource( 20 )
 
 [node name="state_0_loss" type="Node2D" parent="."]
 script = ExtResource( 8 )
