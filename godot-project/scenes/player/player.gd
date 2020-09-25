@@ -93,10 +93,12 @@ func die():
 func loose_loved_one():
 	position = $loved_one.global_position
 	var loved_one = $loved_one
+	take_damage(50)
 	remove_child(loved_one)
 	get_node("/root/main_scene").add_child(loved_one)
 	loved_one.global_position = position 
 	loved_one.die()
+	return loved_one
 	
 func sacrifice():
 	take_damage(damage_per_sacrifice)

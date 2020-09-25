@@ -2,7 +2,6 @@ extends Node2D
 
 var state_machine
 onready var player = get_node("/root/main_scene/player")
-onready var loved_one = get_node("/root/main_scene/loved_one")
 onready var death = get_node("/root/main_scene/death")
 var player_final_position = Vector2(150.0, 368.0)
 var loved_one_final_position = Vector2(500.0, 470.0)
@@ -24,9 +23,10 @@ func process(delta):
 	if player.global_position.distance_to(player_final_position) > 30:
 		all_in_position = false
 		player.move_and_collide((player_final_position - player.global_position).normalized() * 300 * delta)
-	if loved_one.global_position.distance_to(loved_one_final_position) > 30:
+	print("state_machine.loved_one.global_position " + str(state_machine.loved_one.global_position))
+	if state_machine.loved_one.global_position.distance_to(loved_one_final_position) > 30:
 		all_in_position = false
-		loved_one.move_and_collide((loved_one_final_position - loved_one.global_position).normalized() * 300 * delta)
+		state_machine.loved_one.move_and_collide((loved_one_final_position - state_machine.loved_one.global_position).normalized() * 300 * delta)
 	if death.global_position.distance_to(death_final_position) > 30:
 		all_in_position = false
 		death.move_and_collide((death_final_position - death.global_position).normalized() * 300 * delta)

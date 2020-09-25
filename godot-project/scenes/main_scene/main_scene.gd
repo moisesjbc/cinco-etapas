@@ -3,11 +3,11 @@ extends Node2D
 var current_stage: int = -1
 var distance_to_loved_one = 0
 var death_right
+var loved_one
 
 onready var current_state
 
 func _ready():
-	print("READY")
 	get_tree().paused = false
 	change_state("state_0_loss")
 		

@@ -15,7 +15,7 @@ var death_left_final_position
 func start():
 	player = state_machine.get_node("/root/main_scene/player")
 	player_final_position = state_machine.get_node("/root/main_scene/loved_one").real_global_position()
-	loved_one = state_machine.get_node("/root/main_scene/loved_one")
+	loved_one = state_machine.loved_one
 	
 	death_left = get_node("/root/main_scene/death")
 	death_left_final_position = Vector2(300, death_left.global_position.y)

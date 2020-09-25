@@ -13,3 +13,6 @@ func _physics_process(delta):
 	
 func real_global_position():
 	return $sprite.global_position
+
+func _on_visibility_notifier_screen_exited():
+	set_physics_process(false)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/story_gui/story_gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://scenes/main_scene/states/state_2_anger.gd" type="Script" id=10]
 [ext_resource path="res://scenes/main_scene/states/state_3_bargaining.gd" type="Script" id=11]
 [ext_resource path="res://scenes/main_scene/states/state_4_depression.gd" type="Script" id=12]
-[ext_resource path="res://scenes/loved_one/loved_one.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/main_scene/states/state_4_depression_act_1.gd" type="Script" id=14]
 [ext_resource path="res://scenes/main_scene/states/state_4_depression_act_2.gd" type="Script" id=15]
 [ext_resource path="res://scenes/main_scene/states/state_5_acceptance_act_0.gd" type="Script" id=16]
@@ -58,9 +57,6 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="loved_one" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1198.79, 407.454 )
 
 [node name="state_0_loss" type="Node2D" parent="."]
 script = ExtResource( 8 )
