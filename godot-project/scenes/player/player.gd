@@ -74,7 +74,7 @@ func shoot():
 	bullet.global_rotation = $bullet_respawn/sprite.global_rotation
 
 func update_life_label():
-	$life_label.text = str(life) + " %"
+	$life_label.text = str(life)
 
 func meteorite_hit():
 	take_damage(damage_per_meteorite)
