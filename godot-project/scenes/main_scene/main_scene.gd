@@ -17,7 +17,7 @@ func change_state(new_state):
 	current_state.state_machine = self
 	if current_state.has_method("start"):
 		current_state.start()
-	
+
 func _on_stage_timer_timeout():
 	if current_state and current_state.has_method("timeout"):
 		current_state.timeout()

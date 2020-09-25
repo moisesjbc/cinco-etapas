@@ -14,6 +14,7 @@ func start():
 	state_machine.clean_npcs()
 	state_machine.get_node("story_gui").set_text("O no...", null, null)
 	state_machine.get_node("player").disable_input()
+	death.set_physics_process(false)
 
 func process(delta):
 	var all_in_position = true

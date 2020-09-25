@@ -22,7 +22,7 @@ func start():
 	friends_respawn.respawn_friend(500)
 	
 	death_left = get_node("/root/main_scene/death")
-	death_left_final_position = Vector2(400.0, death_left.global_position.y)
+	death_left_final_position = Vector2(350.0, death_left.global_position.y)
 	
 	death_right = state_machine.death_right
 	death_right_final_position = Vector2(650.0, death_right.global_position.y)
