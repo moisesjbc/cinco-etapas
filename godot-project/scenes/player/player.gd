@@ -53,6 +53,9 @@ func _physics_process(delta):
 
 func disable_input():
 	input_enabled = false
+	
+func enable_input():
+	input_enabled = true
 
 func stick_friend(friend):
 	add_child(friend)

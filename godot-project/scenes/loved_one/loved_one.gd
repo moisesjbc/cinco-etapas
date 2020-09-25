@@ -9,4 +9,7 @@ func die():
 	set_physics_process(true)
 
 func _physics_process(delta):
-	move_and_collide(Vector2(1.0, 0.0).normalized() * 500 * delta)
+	var collision = move_and_collide(Vector2(1.0, 0.0).normalized() * 500 * delta)
+	
+func real_global_position():
+	return $sprite.global_position
