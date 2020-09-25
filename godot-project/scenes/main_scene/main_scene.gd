@@ -37,7 +37,7 @@ func move_to(node, final_position, delta, flag, speed = 300):
 	else:
 		return flag and true
 
-func set_text(text, pre_callback, post_callback, delay):
+func set_text(text, pre_callback, post_callback, delay=2):
 	$story_gui.set_text(text, pre_callback, post_callback, delay)
 	
 func set_texts(texts, post_callback=null):
