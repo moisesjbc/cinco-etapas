@@ -16,6 +16,7 @@ var bullet_scene = preload("res://scenes/bullet/bullet.tscn")
 var life = 100
 var sacrifice_enabled: bool = false
 var input_enabled: bool = true
+var shoot_enabled: bool = true
 
 signal player_died
 
@@ -44,7 +45,7 @@ func _physics_process(delta):
 			sacrifice()
 			
 		# Shoot
-		if Input.is_action_just_pressed("ui_shoot"):
+		if shoot_enabled and Input.is_action_just_pressed("ui_shoot"):
 			shoot()
 		
 		speed = max(base_speed + travelling_speed_delta() * 0.1 - n_sticked_friends * stick_penalty_by_friend, min_speed)
@@ -56,8 +57,9 @@ func _physics_process(delta):
 func disable_input():
 	input_enabled = false
 	
-func enable_input():
+func depression():
 	input_enabled = true
+	shoot_enabled = false
 
 func stick_friend(friend):
 	add_child(friend)

@@ -11,7 +11,7 @@ var death_right_final_position
 
 func start():
 	player = get_node("/root/main_scene/player")
-	player.enable_input()
+	player.depression()
 	
 	var friends_respawn = state_machine.get_node("friends_respawn")
 	friends_respawn.respawn_friend(500)
