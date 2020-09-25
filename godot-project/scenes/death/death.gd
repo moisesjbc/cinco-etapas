@@ -12,4 +12,6 @@ func ready():
 		velocity = Vector2(-1.0, 0.0)
 
 func _physics_process(delta):
-	move_and_collide(velocity * max(player.base_traveling_speed - player.traveling_speed, 0) * delta)
+	var collision = move_and_collide(velocity * max(player.initial_traveling_speed - player.traveling_speed, 0) * delta)
+	if collision and collision.collider.name == "player":
+		collision.collider.die()

@@ -7,7 +7,9 @@ var death_right
 onready var current_state
 
 func _ready():
-	change_state("state_4_depression_act_0")
+	print("READY")
+	get_tree().paused = false
+	change_state("state_0_loss")
 		
 func change_state(new_state):
 	current_state = get_node(new_state)
@@ -19,7 +21,11 @@ func _on_stage_timer_timeout():
 	if current_state and current_state.has_method("timeout"):
 		current_state.timeout()
 
+var i=0
+
 func _physics_process(delta):
+	i += 1
+	print("process " + str(i))
 	if current_state and current_state.has_method("process"):
 		current_state.process(delta)
 
@@ -40,3 +46,8 @@ func set_texts(texts, post_callback=null):
 	
 func set_timeout(time):
 	$stage_timer.start(time)
+
+
+func _on_player_player_died():
+	get_tree().paused = true
+	$game_over.set_visible(true)

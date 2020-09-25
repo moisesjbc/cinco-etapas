@@ -17,6 +17,8 @@ var life = 100
 var sacrifice_enabled: bool = false
 var input_enabled: bool = true
 
+signal player_died
+
 func _ready():
 	base_speed = initial_speed
 	update_life_label()
@@ -79,9 +81,14 @@ func meteorite_hit():
 	
 func take_damage(damage):
 	life -= damage
-	if life < 0:
+	if life <= 0:
 		life = 0
+		die()
+		
 	update_life_label()
+	
+func die():
+	emit_signal("player_died")
 
 func loose_loved_one():
 	position = $loved_one.global_position

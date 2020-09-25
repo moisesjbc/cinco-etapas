@@ -12,4 +12,4 @@ func step_1():
 func process(delta):
 	state_machine.get_node("state_2_anger").process(delta)
 	if state_machine.distance_to_loved_one <= 0:
-		state_machine.change_state("state_4_depression")
+		state_machine.change_state("state_4_depression_act_0")
