@@ -1,0 +1,252 @@
+{
+  "name": "pain-game-devs-jam-ii",
+  "numberOfColumns": 3,
+  "columns": [
+    {
+      "name": "ToDo",
+      "cards": [
+        {
+          "name": "Reducir vida al 50% en la separación",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Balas no afectan a meteoritos",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir curación poco a poco",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Deshabilitar giro para kinematics",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Implementar tutorial",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "[Split] Gameplay",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "Arreglar muro avanzando aunque no tengas amigos pegados",
+          "details": "",
+          "color": "FF9E9E"
+        },
+        {
+          "name": "Primer hito - Viernes 25",
+          "details": "",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "[Split] Gráficos",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "[Split] Música y sonido",
+          "details": "",
+          "color": "FCC7FC"
+        },
+        {
+          "name": "Segundo hito - Sábado 26",
+          "details": "",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "¿Movimiento del jugador con inercia?",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "Tercer hito - Domingo 27",
+          "details": "",
+          "color": "FCE4D4"
+        },
+        {
+          "name": "Añadir tareas de fases",
+          "details": "",
+          "color": "C1F7C2"
+        },
+        {
+          "name": "[Split] Menús",
+          "details": "",
+          "color": "FCC7FC"
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "name": "On going",
+      "cards": [],
+      "settings": {
+        "limit": 2
+      }
+    },
+    {
+      "name": "Done",
+      "cards": [
+        {
+          "name": "Añadir condición de muerte",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Permitir cambiar tamaño de la pantalla (mantener ratio)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Implementar texto final (DESC)",
+          "details": "Hace unos meses del accidente\nLo pagué con mis amigos\nPero fueron ellos quienes me salvaron del pozo",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "5. Implementar aceptación (simple)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "4. Implementar depresión (simple)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Hacer que las velocidades de acercamiento y del propio jugador sean independientes (otros elementos se mueven con respecto a la primera)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "3. Implementar negociación (simple)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "2. Implementar ira (simple)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Limitar dirección de movimiento hacia la derecha con muerte llegando por la izquierda",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "1. Implementar negación (simple)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "0. Implementar separación (simple)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Meteoritos reducen vida del jugador al chocar con él",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir indicador de vida a jugador",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Meteoritos desaparecen al chocar con un amigo o el jugador",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir disparos",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir respawn de amigos",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Eliminar amigos que están muy lejos",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir ralentización basada en el número de amigos pegados",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear amigo sencillo que se acerque a ti \"y se pegue\"",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir borrado de meteoritos cuando están muy lejos del jugador",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Mejorar respawn de meteoritos (DESC)",
+          "details": "Si te mantienes avanzando en la dirección apenas te los cruzas",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Spawnear meteoritos (sin colisiones)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir viewport al jugador",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Movimiento básico (sin aceleración)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear sprite estático de referencia",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Inicializar proyecto Godot",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Resumir / refinar 5 etapas con ideas de mecánicas",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Recopilar información sobre las N fases del duelo",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Añadir documento de ideas",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Crear repositorio",
+          "details": "",
+          "color": "FAFCD2"
+        }
+      ],
+      "settings": {}
+    }
+  ],
+  "archived": [],
+  "settings": {}
+}
