@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scenes/meteorite/meteorite.png" type="Texture" id=1]
 [ext_resource path="res://scenes/meteorite/meteorite.gd" type="Script" id=2]
 [ext_resource path="res://scenes/removal_by_distance/removal_by_distance.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.1087, 31.8406 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 44.1227
 
 [node name="meteorite" type="KinematicBody2D" groups=[
 "clear_on_reset",
