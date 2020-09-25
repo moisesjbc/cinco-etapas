@@ -9,7 +9,7 @@ export var color: Color = Color.white
 
 func _ready():
 	scales[0] = scale
-	scales[1] = scale + Vector2(0.1, 0.1)
+	scales[1] = scale + Vector2(scale.x * 0.1, scale.y * 0.1)
 	start_tween()
 	self.modulate = color
 
