@@ -6,6 +6,8 @@ export var STICKY_DISTANCE = 100
 onready var player
 var is_sticked: bool = false
 var speed: int
+var link_scene = preload("res://scenes/particles_link/particles_link.tscn")
+var link = null
 
 func _ready():
 	player = get_node("/root/main_scene/player")
@@ -26,7 +28,10 @@ func _physics_process(delta):
 		get_parent().remove_child(self)
 		player.add_child(self)
 		player.stick_friend(self)
+		link = link_scene.instance()
+		add_child(link)
 		global_position = position
+		link.link($energy_ball, player.get_node("energy_ball"))
 		set_physics_process(false)
 
 func move_away():

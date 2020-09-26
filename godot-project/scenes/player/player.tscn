@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://scenes/particles_link/particles_link.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/loved_one/loved_one.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/energy_ball/energy_ball.tscn" type="PackedScene" id=4]
@@ -19,7 +20,6 @@ initial_speed = 200
 stick_penalty_by_friend = 20
 
 [node name="shape" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="bullet_respawn" type="Position2D" parent="."]
@@ -49,4 +49,6 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="particles_link" parent="." instance=ExtResource( 1 )]
 [connection signal="timeout" from="healing_timer" to="." method="_on_healing_timer_timeout"]

@@ -10,7 +10,6 @@ onready var current_state
 func _ready():
 	clean_npcs()
 	get_tree().paused = false
-	# TODO: Remove
 	change_state("tutorial_act_0")
 
 func change_state(new_state):

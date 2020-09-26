@@ -23,6 +23,7 @@ signal player_died
 func _ready():
 	base_speed = initial_speed
 	update_life_label()
+	$particles_link.link($loved_one/sprite, $energy_ball)
 
 func _physics_process(delta):
 	var velocity: Vector2 = Vector2(0.0, 0.0)
@@ -103,6 +104,7 @@ func die():
 func loose_loved_one():
 	position = $loved_one.global_position
 	var loved_one = $loved_one
+	$particles_link.break()
 	take_damage(50)
 	remove_child(loved_one)
 	get_node("/root/main_scene").add_child(loved_one)

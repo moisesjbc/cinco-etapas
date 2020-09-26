@@ -9,7 +9,7 @@ func start():
 	
 func update_text():
 	state_machine.set_text(
-		state_machine.get_instruction_text("Click derecho del ratón", shooting_learned) + " para disparar ",
+		state_machine.get_instruction_text("Click izquierdo del ratón", shooting_learned) + " para disparar ",
 		null, null, null)
 		
 func input(event):
