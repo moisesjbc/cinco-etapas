@@ -14,8 +14,8 @@ script = ExtResource( 1 )
 curve = SubResource( 1 )
 
 [node name="path_follow" type="PathFollow2D" parent="path"]
-position = Vector2( 1048.48, 751.842 )
-rotation = -1.57239
+position = Vector2( 1046.23, 724.903 )
+rotation = -1.56915
 
 [node name="meteors_timer" type="Timer" parent="."]
 wait_time = 0.8
