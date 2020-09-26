@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scenes/death/death_sprite.png" type="Texture" id=1]
 [ext_resource path="res://scenes/death/death.gd" type="Script" id=2]
+[ext_resource path="res://scenes/death/death_particle.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.8418, 387.401 )
+extents = Vector2( 49.451, 384.932 )
 
 [node name="death" type="Area2D"]
 collision_layer = 16
@@ -13,10 +14,19 @@ script = ExtResource( 2 )
 [node name="sprite" type="Sprite" parent="."]
 modulate = Color( 1, 0.0196078, 0.309804, 1 )
 self_modulate = Color( 1, 0, 0, 1 )
-position = Vector2( 0.259521, 0.420624 )
-scale = Vector2( 1, 11.9832 )
+position = Vector2( -525.399, -5.6836 )
+scale = Vector2( 11.5132, 8.59337 )
 texture = ExtResource( 1 )
 
 [node name="collision_shape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 32.8336, 2.63002 )
+amount = 200
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 1, 400 )
+direction = Vector2( 0, 0 )
+gravity = Vector2( 55, 0 )
 [connection signal="body_entered" from="." to="." method="_on_death_body_entered"]
