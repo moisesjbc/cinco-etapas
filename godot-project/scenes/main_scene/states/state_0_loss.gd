@@ -3,6 +3,7 @@ extends Node2D
 var state_machine
 
 func start():
+	state_machine.get_node("skip_label").set_visible(false)
 	state_machine.get_node("story_gui").set_text("Eramos tan felices...", null, funcref(self, "loose_loved_one"))
 	
 func loose_loved_one():

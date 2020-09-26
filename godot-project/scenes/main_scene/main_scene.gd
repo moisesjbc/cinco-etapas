@@ -61,3 +61,8 @@ func get_instruction_text(text, flag):
 	if flag:
 		color = "#00FF00"
 	return "[color=" + color + "]" + text + "[/color]"
+	
+func check_skip_tutorial():
+	if Input.is_action_just_pressed("ui_skip"):
+		$stage_timer.stop()
+		change_state("state_0_loss")

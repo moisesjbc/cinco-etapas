@@ -8,6 +8,7 @@ var up_pressed: bool = false
 var down_pressed: bool = false
 
 func start():
+	state_machine.get_node("skip_label").set_visible(true)
 	update_text()
 	
 func update_text():
@@ -36,6 +37,7 @@ func process(delta):
 		if left_pressed and right_pressed and up_pressed and down_pressed:
 			state_machine.set_timeout(1)
 			set_physics_process(false)
-		
+	state_machine.check_skip_tutorial()
+	
 func timeout():
 	state_machine.change_state("tutorial_act_1")

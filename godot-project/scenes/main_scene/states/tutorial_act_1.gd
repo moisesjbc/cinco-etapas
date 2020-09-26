@@ -12,6 +12,9 @@ func update_text():
 		state_machine.get_instruction_text("Mueve el ratón", aim_learned) + " para apuntar ",
 		null, null, null)
 		
+func process(delta):
+	state_machine.check_skip_tutorial()
+		
 func input(event):
 	if not aim_learned and event is InputEventMouseMotion:
 		aim_learned = true
