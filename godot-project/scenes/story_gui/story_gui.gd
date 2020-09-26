@@ -3,13 +3,22 @@ extends Control
 var current_callback = null
 
 func set_text(text, start_callback, end_callback, delay=3):
+	set_physics_process(false)
 	if start_callback:
 		start_callback.call_func()
 
 	$RichTextLabel.set_bbcode("[center]" + text + "[/center]")
 	current_callback = end_callback
 	if delay:
-		$timer.start(delay)
+		if delay is int:
+			$timer.start(delay)
+		else:
+			set_physics_process(true)
+			
+func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_sacrifice"):
+		set_physics_process(false)
+		_on_timer_timeout()
 
 func _on_timer_timeout():
 	$RichTextLabel.set_bbcode("")
