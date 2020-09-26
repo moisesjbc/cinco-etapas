@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 20
 font_data = ExtResource( 2 )
 
 [node name="story_gui" type="Control"]
@@ -24,8 +24,6 @@ margin_right = 1037.83
 margin_bottom = 766.799
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "FFFF"
-text = "FFFF"
 __meta__ = {
 "_edit_use_anchors_": false
 }

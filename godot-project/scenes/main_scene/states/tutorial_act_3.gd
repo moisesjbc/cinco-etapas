@@ -22,4 +22,4 @@ func input(event):
 		state_machine.set_timeout(1)
 		
 func timeout():
-	state_machine.change_state("state_0_loss")
+	state_machine.change_state("tutorial_act_4")

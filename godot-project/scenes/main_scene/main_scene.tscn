@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/story_gui/story_gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://scenes/main_scene/states/tutorial_act_3.gd" type="Script" id=20]
 [ext_resource path="res://scenes/main_scene/background.png" type="Texture" id=21]
 [ext_resource path="res://scenes/distance_control/distance_control.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/main_scene/states/tutorial_act_4.gd" type="Script" id=23]
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 7 )
@@ -67,6 +68,9 @@ script = ExtResource( 19 )
 
 [node name="tutorial_act_3" type="Node2D" parent="."]
 script = ExtResource( 20 )
+
+[node name="tutorial_act_4" type="Node2D" parent="."]
+script = ExtResource( 23 )
 
 [node name="state_0_loss" type="Node2D" parent="."]
 script = ExtResource( 8 )

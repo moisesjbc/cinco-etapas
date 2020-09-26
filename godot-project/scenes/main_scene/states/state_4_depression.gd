@@ -12,7 +12,7 @@ func start():
 	state_machine.get_node("meteorites_respawn").disable()
 	state_machine.get_node("friends_respawn").disable()
 	state_machine.clean_npcs()
-	state_machine.get_node("story_gui").set_text("O no...", null, null)
+	state_machine.get_node("story_gui").set_text("", null, null, null)
 	state_machine.get_node("player").disable_input()
 	death.set_physics_process(false)
 

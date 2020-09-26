@@ -2,7 +2,7 @@ extends Control
 
 var current_callback = null
 
-func set_text(text, start_callback, end_callback, delay=2):
+func set_text(text, start_callback, end_callback, delay=3):
 	if start_callback:
 		start_callback.call_func()
 
