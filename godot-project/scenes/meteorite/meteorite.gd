@@ -7,6 +7,7 @@ export var destroy_on_collision: bool = true
 var player
 
 func _ready():
+	z_index = -1
 	player = get_node("/root/main_scene/player")
 	velocity = velocity.normalized()
 

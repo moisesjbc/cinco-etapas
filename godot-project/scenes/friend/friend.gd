@@ -10,6 +10,7 @@ var link_scene = preload("res://scenes/particles_link/particles_link.tscn")
 var link = null
 
 func _ready():
+	z_index = -1
 	player = get_node("/root/main_scene/player")
 	speed = player.speed + randi() % (MAX_SPEED - MIN_SPEED) + MIN_SPEED
 
