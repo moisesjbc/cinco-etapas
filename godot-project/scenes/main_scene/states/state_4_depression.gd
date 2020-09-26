@@ -8,7 +8,7 @@ var loved_one_final_position = Vector2(500.0, 470.0)
 var death_final_position = Vector2(-100.0, 368.0)
 
 func start():
-	state_machine.get_node("distance_label").queue_free()
+	state_machine.get_node("distance_control").queue_free()
 	state_machine.get_node("meteorites_respawn").disable()
 	state_machine.get_node("friends_respawn").disable()
 	state_machine.clean_npcs()

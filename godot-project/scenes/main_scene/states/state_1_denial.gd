@@ -13,7 +13,7 @@ func start():
 
 func process(delta):
 	state_machine.distance_to_loved_one = max(state_machine.distance_to_loved_one + (loved_one.traveling_speed - player.traveling_speed) * delta, 0)
-	state_machine.get_node("distance_label").text = str(int(state_machine.distance_to_loved_one)) + " ->"
+	state_machine.get_node("distance_control").set_distance(state_machine.distance_to_loved_one, loved_one.traveling_speed - player.traveling_speed)
 
 func timeout():
 	state_machine.change_state("state_2_anger")

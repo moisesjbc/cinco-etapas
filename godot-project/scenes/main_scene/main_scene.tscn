@@ -21,9 +21,7 @@
 [ext_resource path="res://scenes/main_scene/states/tutorial_act_2.gd" type="Script" id=19]
 [ext_resource path="res://scenes/main_scene/states/tutorial_act_3.gd" type="Script" id=20]
 [ext_resource path="res://scenes/main_scene/background.png" type="Texture" id=21]
-
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 7 )
+[ext_resource path="res://scenes/distance_control/distance_control.tscn" type="PackedScene" id=22]
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 7 )
@@ -57,18 +55,6 @@ margin_bottom = 768.841
 
 [node name="stage_timer" type="Timer" parent="."]
 one_shot = true
-
-[node name="distance_label" type="Label" parent="."]
-margin_left = 930.0
-margin_top = 1.0
-margin_right = 995.0
-margin_bottom = 769.0
-custom_fonts/font = SubResource( 1 )
-align = 2
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="tutorial_act_0" type="Node2D" parent="."]
 script = ExtResource( 13 )
@@ -125,5 +111,11 @@ text = "Escape - Skip"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="distance_control" parent="." instance=ExtResource( 22 )]
+margin_left = 1010.83
+margin_top = 400.763
+margin_right = 1010.83
+margin_bottom = 400.763
 [connection signal="player_died" from="player" to="." method="_on_player_player_died"]
 [connection signal="timeout" from="stage_timer" to="." method="_on_stage_timer_timeout"]
