@@ -38,8 +38,7 @@ func start():
 
 func process(delta):
 	var all_in_position = true
-	
-	#state_machine.move_to(player, player_final_position, delta, true)
+
 	if player_got_closed:
 		if loved_one:
 			all_in_position = state_machine.move_to(loved_one, loved_one_final_position, delta, all_in_position)

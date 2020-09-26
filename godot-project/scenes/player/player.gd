@@ -11,7 +11,6 @@ export var damage_per_sacrifice = 10
 export var min_speed: int = 30
 export var stick_penalty_by_friend: int = 100
 export var traveling_speed_increase_per_sacrifice: int = 300
-var n_sticked_friends: int = 0
 var bullet_scene = preload("res://scenes/bullet/bullet.tscn")
 var life = 100
 var sacrifice_enabled: bool = false
@@ -49,8 +48,9 @@ func _physics_process(delta):
 		if shoot_enabled and Input.is_action_just_pressed("ui_shoot"):
 			shoot()
 		
-		speed = max(base_speed + travelling_speed_delta() * 0.1 - n_sticked_friends * stick_penalty_by_friend, min_speed)
-		traveling_speed = max(base_traveling_speed - n_sticked_friends * stick_penalty_by_friend, min_speed)
+		var _n_sticked_friends = n_sticked_friends()
+		speed = max(base_speed + travelling_speed_delta() * 0.1 - _n_sticked_friends * stick_penalty_by_friend, min_speed)
+		traveling_speed = max(base_traveling_speed - _n_sticked_friends * stick_penalty_by_friend, min_speed)
 		move_and_collide(velocity * speed * delta)
 		
 		$bullet_respawn.look_at(get_global_mouse_position())
@@ -61,13 +61,17 @@ func disable_input():
 func depression():
 	input_enabled = true
 	shoot_enabled = false
+	
+func n_sticked_friends():
+	var i = 0
+	for child in get_children():
+		if child.is_in_group("friends"):
+			i += 1
+
+	return i
 
 func stick_friend(friend):
 	add_child(friend)
-	n_sticked_friends += 1
-	
-func unstick_friend():
-	n_sticked_friends -= 1
 
 func shoot():
 	var bullet = bullet_scene.instance()

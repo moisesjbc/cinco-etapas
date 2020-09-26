@@ -35,6 +35,4 @@ func _physics_process(delta):
 		set_physics_process(false)
 
 func move_away():
-	if is_sticked:
-		player.unstick_friend()
 	queue_free()
