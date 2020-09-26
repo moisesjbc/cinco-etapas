@@ -11,9 +11,11 @@ var death_right
 var death_right_final_position
 var death_left
 var death_left_final_position
+var player_got_closed = false
 
 func start():
 	player = state_machine.get_node("/root/main_scene/player")
+	player.depression()
 	player_final_position = state_machine.get_node("/root/main_scene/loved_one").real_global_position()
 	loved_one = state_machine.loved_one
 	
@@ -33,11 +35,20 @@ func start():
 	
 	death_left_final_position = Vector2(30.0, death_left.global_position.y)
 
+
 func process(delta):
-	var all_in_position = state_machine.move_to(player, player_final_position, delta, true)
-	if loved_one:
-		all_in_position = state_machine.move_to(loved_one, loved_one_final_position, delta, all_in_position)
-	all_in_position = state_machine.move_to(death_right, death_right_final_position, delta, all_in_position)
+	var all_in_position = true
+	
+	#state_machine.move_to(player, player_final_position, delta, true)
+	if player_got_closed:
+		if loved_one:
+			all_in_position = state_machine.move_to(loved_one, loved_one_final_position, delta, all_in_position)
+		all_in_position = state_machine.move_to(death_right, death_right_final_position, delta, all_in_position)
+	else:
+		all_in_position = false
+		if player.global_position.x > 300:
+			player_got_closed = true
+		
 	all_in_position = state_machine.move_to(death_left, death_left_final_position, delta, all_in_position)
 	if all_in_position:
 		if loved_one:
