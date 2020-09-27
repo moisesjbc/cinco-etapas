@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Cinco etapas - v0.1"
+config/name="Cinco etapas - v1.0"
 run/main_scene="res://menus/main_menu/main_menu.tscn"
 config/icon="res://icon.png"
 
