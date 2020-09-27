@@ -5,7 +5,6 @@ onready var player = get_node("/root/main_scene/player")
 onready var death = get_node("/root/main_scene/death")
 var player_final_position = Vector2(150.0, 368.0)
 var loved_one_final_position = Vector2(500.0, 470.0)
-var death_final_position = Vector2(-100.0, 368.0)
 
 func start():
 	state_machine.get_node("distance_control").queue_free()
@@ -24,8 +23,8 @@ func process(delta):
 	if state_machine.loved_one.global_position.distance_to(loved_one_final_position) > 30:
 		all_in_position = false
 		state_machine.loved_one.move_and_collide((loved_one_final_position - state_machine.loved_one.global_position).normalized() * 300 * delta)
-	if death.global_position.distance_to(death_final_position) > 30:
+	if death.global_position.distance_to(death.initial_global_position) > 30:
 		all_in_position = false
-		death.translate((death_final_position - death.global_position).normalized() * 300 * delta)
+		death.translate((death.initial_global_position - death.global_position).normalized() * 300 * delta)
 	if all_in_position:
 		state_machine.change_state("state_4_depression_act_1")
