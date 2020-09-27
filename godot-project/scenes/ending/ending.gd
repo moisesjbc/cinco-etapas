@@ -7,9 +7,9 @@ func _ready():
 		"Y lo pagué con mis amigos.",
 		"Lo intenté todo para recuperarlo.",
 		"Pero fue imposible y me rendí.",
-		"Mis amigos no se rindieron conmigo y me ayudaron a aceptarlo",
-		"\"Lo... siento\", me disculpé",
-		"\"Tranquilo, solo fue una etapa\"",
+		"Mis amigos no se rindieron conmigo y me ayudaron a aceptarlo.",
+		"\"Lo... siento\", me disculpé.",
+		"\"Tranquilo, solo fue una etapa\".",
 	], funcref(self, "return_to_main_menu"))
 	
 func return_to_main_menu():
