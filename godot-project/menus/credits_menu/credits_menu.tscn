@@ -1,0 +1,130 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/credits_menu/credits_menu.gd" type="Script" id=1]
+
+[node name="credits_menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.997422, 0.991987 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin_container" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 100
+custom_constants/margin_top = 100
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="margin_container"]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 924.0
+margin_bottom = 668.0
+
+[node name="MarginContainer" type="MarginContainer" parent="margin_container/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox_container" type="VBoxContainer" parent="margin_container/Panel/MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 774.0
+margin_bottom = 518.0
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="creadits_title" type="Label" parent="margin_container/Panel/MarginContainer/vbox_container"]
+margin_right = 724.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 0.819608, 0, 1 )
+text = "Créditos"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="margin_container/Panel/MarginContainer/vbox_container"]
+margin_top = 64.0
+margin_right = 724.0
+margin_bottom = 206.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="own_work_title" type="Label" parent="margin_container/Panel/MarginContainer/vbox_container/VBoxContainer"]
+margin_right = 724.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 0.819608, 0, 1 )
+text = "Diseño, programación y gráficos"
+align = 1
+
+[node name="own_work_body" type="RichTextLabel" parent="margin_container/Panel/MarginContainer/vbox_container/VBoxContainer"]
+margin_top = 24.0
+margin_right = 724.0
+margin_bottom = 142.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[center]Moisés J. Bonilla Caraballo ([url=www.moisesjose.com]www.moisesjose.com)[/url][/center]"
+text = "Moisés J. Bonilla Caraballo (www.moisesjose.com)"
+
+[node name="third_party_work_container" type="VBoxContainer" parent="margin_container/Panel/MarginContainer/vbox_container"]
+margin_top = 256.0
+margin_right = 724.0
+margin_bottom = 398.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="third_party_work_title" type="Label" parent="margin_container/Panel/MarginContainer/vbox_container/third_party_work_container"]
+margin_right = 724.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 0.819608, 0, 1 )
+text = "Trabajo de teceros"
+align = 1
+
+[node name="third_party_work_body" type="RichTextLabel" parent="margin_container/Panel/MarginContainer/vbox_container/third_party_work_container"]
+margin_top = 24.0
+margin_right = 724.0
+margin_bottom = 142.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "[center]Sonido de aviso al mostrar textos - \"hint.wav\" de dland ([url=https://freesound.org/people/dland/sounds/320181/]enlace a página de freesound.org[/url])
+Licencia: Creative Commons 0 License
+
+Disparo - Sonido recortado a partir de \"Sci-fi gun shot x6\", de humanoide9000 ([url=https://freesound.org/people/humanoide9000/sounds/330293/]enlace a página de freesound.org[/url])
+Licencia: Creative Commons 0 License.
+[/center]"
+text = "Sonido de aviso al mostrar textos - \"hint.wav\" de dland (enlace a página de freesound.org)
+Licencia: Creative Commons 0 License
+
+Disparo - Sonido recortado a partir de \"Sci-fi gun shot x6\", de humanoide9000 (enlace a página de freesound.org)
+Licencia: Creative Commons 0 License.
+"
+
+[node name="go_back_button" type="Button" parent="margin_container/Panel/MarginContainer/vbox_container"]
+margin_top = 448.0
+margin_right = 724.0
+margin_bottom = 468.0
+[connection signal="pressed" from="margin_container/Panel/MarginContainer/vbox_container/go_back_button" to="." method="_on_go_back_button_pressed"]

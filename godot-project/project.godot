@@ -19,6 +19,10 @@ config/name="godot-project"
 run/main_scene="res://menus/main_menu/main_menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+background="*res://scenes/background/background.tscn"
+
 [display]
 
 window/size/height=768

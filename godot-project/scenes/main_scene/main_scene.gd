@@ -8,7 +8,6 @@ var loved_one
 onready var current_state
 
 func _ready():
-	$background.z_index = -2
 	clean_npcs()
 	get_tree().paused = false
 	change_state("tutorial_act_0")
