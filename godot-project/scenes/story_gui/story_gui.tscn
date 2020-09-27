@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/story_gui/story_gui.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/story_gui/320181__dland__hint.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -50,4 +51,7 @@ __meta__ = {
 [node name="timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="hint_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

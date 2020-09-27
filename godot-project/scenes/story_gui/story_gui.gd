@@ -2,7 +2,9 @@ extends Control
 
 var current_callback = null
 
-func set_text(text, start_callback, end_callback, delay=3):
+func set_text(text, start_callback, end_callback, delay=3, play_hint_sound=true):
+	if play_hint_sound:
+		$hint_sound.play()
 	$press_space_label.visible = false
 	set_physics_process(false)
 	if start_callback:

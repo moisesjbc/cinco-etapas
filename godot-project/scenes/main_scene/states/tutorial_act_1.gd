@@ -10,7 +10,7 @@ func start():
 func update_text():
 	state_machine.set_text(
 		state_machine.get_instruction_text("Mueve el ratón", aim_learned) + " para apuntar ",
-		null, null, null)
+		null, null, null, not aim_learned)
 		
 func process(delta):
 	state_machine.check_skip_tutorial()

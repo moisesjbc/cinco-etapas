@@ -10,7 +10,7 @@ func start():
 func update_text():
 	state_machine.set_text(
 		state_machine.get_instruction_text("Pulsa espacio", use_learned) + " para interactuar ",
-		null, null, null)
+		null, null, null, not use_learned)
 		
 func process(delta):
 	state_machine.check_skip_tutorial()

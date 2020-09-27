@@ -18,7 +18,7 @@ func update_text():
 		state_machine.get_instruction_text("S", down_pressed) + ", " +
 		state_machine.get_instruction_text("D", right_pressed) + ", " +
 		state_machine.get_instruction_text("W", up_pressed) + " para moverte",
-		null, null, null)
+		null, null, null, not left_pressed and not right_pressed and not up_pressed and not down_pressed)
 	
 func process(delta):
 	if not left_pressed or not right_pressed or not up_pressed or not down_pressed:
