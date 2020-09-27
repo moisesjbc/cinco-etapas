@@ -7,7 +7,7 @@ onready var player = get_node("/root/main_scene/player")
 func start():
 	state_machine.get_node("story_gui").set_text("¡Aunque tenga que acabar con todos...!", null, null)
 	state_machine.get_node("friends_respawn").enable()
-	state_machine.get_node("stage_timer").start(2)
+	state_machine.get_node("stage_timer").start(20)
 
 
 func process(delta):

@@ -8,7 +8,7 @@ var loved_one
 func start():
 	state_machine.get_node("story_gui").set_text("No dejaré que se lo lleven...", null, null)
 	state_machine.get_node("meteorites_respawn").enable()
-	state_machine.get_node("stage_timer").start(2)
+	state_machine.get_node("stage_timer").start(10)
 	loved_one = state_machine.loved_one
 
 func process(delta):

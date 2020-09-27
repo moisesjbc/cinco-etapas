@@ -24,7 +24,6 @@ func _physics_process(delta):
 		_on_timer_timeout()
 
 func _on_timer_timeout():
-	$RichTextLabel.set_bbcode("")
 	if current_callback:
 		current_callback.call_func()
 
