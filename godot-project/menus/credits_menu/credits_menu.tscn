@@ -52,22 +52,22 @@ __meta__ = {
 
 [node name="credits_title" type="Label" parent="margin_container/Panel/MarginContainer/vbox_container"]
 margin_right = 844.0
-margin_bottom = 14.0
+margin_bottom = 23.0
 custom_colors/font_color = Color( 1, 0.819608, 0, 1 )
 text = "Créditos"
 align = 1
 
 [node name="credits_body" type="RichTextLabel" parent="margin_container/Panel/MarginContainer/vbox_container"]
-margin_top = 24.0
+margin_top = 33.0
 margin_right = 844.0
-margin_bottom = 558.0
+margin_bottom = 549.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
 bbcode_text = "[center]
 [color=#ffd100]Diseño, programación y gráficos[/color]
 
-Moisés J. Bonilla Caraballo ([url=www.moisesjose.com]www.moisesjose.com)[/url]
+Moisés J. Bonilla Caraballo ([url=https://www.moisesjose.com]www.moisesjose.com)[/url]
 
 [color=#ffd100]Trabajo de terceros[/color]
 
@@ -82,7 +82,7 @@ Fuente - [url=https://design.ubuntu.com/font/]Ubuntu font[/url]
 [color=#ffd100]Software usado[/color]
 
 [url=https://godotengine.org/]Godot Engine[/url]
-[url=www.gimp.org]Gimp[/url]
+[url=https://www.gimp.org]Gimp[/url]
 [/center]"
 text = "
 Diseño, programación y gráficos
@@ -106,8 +106,9 @@ Gimp
 "
 
 [node name="go_back_button" type="Button" parent="margin_container/Panel/MarginContainer/vbox_container"]
-margin_top = 568.0
+margin_top = 559.0
 margin_right = 844.0
 margin_bottom = 588.0
 text = "Volver al menú principal"
+[connection signal="meta_clicked" from="margin_container/Panel/MarginContainer/vbox_container/credits_body" to="." method="_on_credits_body_meta_clicked"]
 [connection signal="pressed" from="margin_container/Panel/MarginContainer/vbox_container/go_back_button" to="." method="_on_go_back_button_pressed"]

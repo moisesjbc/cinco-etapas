@@ -59,7 +59,7 @@ valign = 1
 [node name="made_for_label" type="Label" parent="margin_container/root_vbox_container/title_margin_container/title_vbox_container"]
 margin_top = 61.0
 margin_right = 824.0
-margin_bottom = 75.0
+margin_bottom = 84.0
 text = "Desarrollador para la Spain Game Devs Jam II"
 align = 1
 
@@ -73,25 +73,25 @@ custom_constants/separation = 30
 
 [node name="play_button" type="Button" parent="margin_container/root_vbox_container/vbox_container"]
 margin_right = 824.0
-margin_bottom = 20.0
+margin_bottom = 29.0
 text = "JUGAR"
 
 [node name="credits_button" type="Button" parent="margin_container/root_vbox_container/vbox_container"]
-margin_top = 50.0
+margin_top = 59.0
 margin_right = 824.0
-margin_bottom = 70.0
+margin_bottom = 88.0
 text = "Créditos"
 
 [node name="exit_button" type="Button" parent="margin_container/root_vbox_container/vbox_container"]
-margin_top = 100.0
+margin_top = 118.0
 margin_right = 824.0
-margin_bottom = 120.0
+margin_bottom = 147.0
 text = "Salir"
 
 [node name="version_label" type="Label" parent="margin_container/root_vbox_container/vbox_container"]
-margin_top = 234.0
+margin_top = 243.0
 margin_right = 824.0
-margin_bottom = 248.0
+margin_bottom = 266.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 text = "v0.1"

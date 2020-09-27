@@ -102,12 +102,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 441.089
-margin_top = 9.54095
-margin_right = 541.089
-margin_bottom = 28.541
+margin_left = 407.031
+margin_top = 4.50127
+margin_right = 588.031
+margin_bottom = 23.5013
 custom_fonts/font = SubResource( 1 )
-text = "Escape - Skip"
+text = "Escape - Omitir tutorial"
 __meta__ = {
 "_edit_use_anchors_": false
 }
