@@ -12,7 +12,7 @@ func update_text():
 		state_machine.get_instruction_text("Click izquierdo del ratón", shooting_learned) + " para disparar ",
 		null, null, null, not shooting_learned)
 		
-func process(delta):
+func process(_delta):
 	state_machine.check_skip_tutorial()
 		
 func input(event):

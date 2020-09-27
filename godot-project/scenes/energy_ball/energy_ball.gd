@@ -17,6 +17,6 @@ func start_tween():
 	$tween.interpolate_property(self, "scale", scales[0], scales[1], 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	$tween.start()
 
-func _on_tween_tween_completed(object, key):
+func _on_tween_tween_completed(_object, _key):
 	scales.invert()
 	start_tween()

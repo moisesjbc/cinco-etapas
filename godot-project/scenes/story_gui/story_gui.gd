@@ -19,7 +19,7 @@ func set_text(text, start_callback, end_callback, delay=3, play_hint_sound=true)
 			$press_space_label.visible = true
 			set_physics_process(true)
 			
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_sacrifice"):
 		set_physics_process(false)
 		$press_space_label.visible = false
