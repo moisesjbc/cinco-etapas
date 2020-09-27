@@ -3,6 +3,7 @@ extends Control
 var current_callback = null
 
 func set_text(text, start_callback, end_callback, delay=3):
+	$press_space_label.visible = false
 	set_physics_process(false)
 	if start_callback:
 		start_callback.call_func()
@@ -13,11 +14,13 @@ func set_text(text, start_callback, end_callback, delay=3):
 		if delay is int:
 			$timer.start(delay)
 		else:
+			$press_space_label.visible = true
 			set_physics_process(true)
 			
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_sacrifice"):
 		set_physics_process(false)
+		$press_space_label.visible = false
 		_on_timer_timeout()
 
 func _on_timer_timeout():

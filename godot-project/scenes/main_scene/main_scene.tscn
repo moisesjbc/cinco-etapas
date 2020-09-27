@@ -25,7 +25,7 @@
 [ext_resource path="res://scenes/main_scene/states/tutorial_act_4.gd" type="Script" id=23]
 [ext_resource path="res://scenes/walls/walls.tscn" type="PackedScene" id=24]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 7 )
 
 [node name="main_scene" type="Node2D"]
@@ -111,7 +111,7 @@ margin_left = 441.089
 margin_top = 9.54095
 margin_right = 541.089
 margin_bottom = 28.541
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Escape - Skip"
 __meta__ = {
 "_edit_use_anchors_": false
