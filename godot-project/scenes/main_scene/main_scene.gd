@@ -25,6 +25,9 @@ func _on_stage_timer_timeout():
 		current_state.timeout()
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_pause") and not "tutorial" in current_state.name:
+		$pause_menu.show()
+		
 	if current_state and current_state.has_method("process"):
 		current_state.process(delta)
 		
