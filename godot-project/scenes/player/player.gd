@@ -74,6 +74,7 @@ func stick_friend(friend):
 	add_child(friend)
 
 func shoot():
+	$shot_sound.play()
 	var bullet = bullet_scene.instance()
 	
 	get_node("/root/main_scene").add_child(bullet)
