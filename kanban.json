@@ -4,29 +4,31 @@
   "columns": [
     {
       "name": "ToDo",
+      "cards": [],
+      "settings": {}
+    },
+    {
+      "name": "On going",
+      "cards": [],
+      "settings": {
+        "limit": 2
+      }
+    },
+    {
+      "name": "Done",
       "cards": [
         {
-          "name": "Entregar v0.1 y pedir feedback",
+          "name": "Actualizar copia de seguridad del Kanban",
           "details": "",
-          "color": "FFB5B5"
+          "color": "C1F7C2"
         },
         {
-          "name": "[Split] Música y sonido",
+          "name": "ENTREGAR v1 - tag - export - Github release - itch.io",
           "details": "",
-          "color": "FCC7FC"
+          "color": "FF9E9E"
         },
         {
-          "name": "Animación separación",
-          "details": "",
-          "color": "FAFCD2"
-        },
-        {
-          "name": "Añadir título a ventana",
-          "details": "",
-          "color": "FAFCD2"
-        },
-        {
-          "name": "Ajustar dificultad",
+          "name": "Corregir erratas encontradas por Edu",
           "details": "",
           "color": "FAFCD2"
         },
@@ -36,9 +38,34 @@
           "color": "FAFCD2"
         },
         {
-          "name": "¿Movimiento del jugador con inercia?",
+          "name": "Tercer hito - Domingo 27",
           "details": "",
-          "color": "C1F7C2"
+          "color": "FCE4D4"
+        },
+        {
+          "name": "ENTREGAR v1 - tag - export - Github release - itch.io",
+          "details": "",
+          "color": "FF9E9E"
+        },
+        {
+          "name": "Añadir pause",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Actualizar versión (título ventana y menú)",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Corregir animación de la muerte izquierda pasándose de frenada",
+          "details": "",
+          "color": "FAFCD2"
+        },
+        {
+          "name": "Hacer que la muerte izquierda vuelva a su posición cuando no tienes amigos enlazados",
+          "details": "",
+          "color": "FAFCD2"
         },
         {
           "name": "[Split] Menús (incluyendo pause)",
@@ -46,39 +73,25 @@
           "color": "FCC7FC"
         },
         {
-          "name": "ENTREGAR",
+          "name": "[Split] Música y sonido",
           "details": "",
-          "color": "FF9E9E"
+          "color": "FCC7FC"
+        },
+        {
+          "name": "Entregar v0.1 y pedir feedback",
+          "details": "",
+          "color": "FFB5B5"
+        },
+        {
+          "name": "Añadir título a ventana",
+          "details": "",
+          "color": "FAFCD2"
         },
         {
           "name": "Actualizar copia de seguridad del Kanban",
           "details": "",
           "color": "C1F7C2"
         },
-        {
-          "name": "Tercer hito - Domingo 27",
-          "details": "",
-          "color": "FCE4D4"
-        }
-      ],
-      "settings": {}
-    },
-    {
-      "name": "On going",
-      "cards": [
-        {
-          "name": "Actualizar copia de seguridad del Kanban",
-          "details": "",
-          "color": "C1F7C2"
-        }
-      ],
-      "settings": {
-        "limit": 2
-      }
-    },
-    {
-      "name": "Done",
-      "cards": [
         {
           "name": "Añadir número de versión (menú y título)",
           "details": "",
